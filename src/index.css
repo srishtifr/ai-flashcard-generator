@@ -1,0 +1,202 @@
+/* Smooth Soothing Sage & Presentation Workspace Base */
+body {
+  background-color: #f4f7f6 !important; /* Calming mint-gray background canvas */
+  color: #2d3a34 !important;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+/* Master Flex Workspace Layout matching reference image */
+.master-flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 82vh;
+  gap: 24px;
+}
+
+/* LEFT SIDE PANEL: Clean Input forms and Card Stack index list (30% space) */
+.left-control-panel {
+  flex: 30;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* RIGHT SIDE PANEL: Dedicated Interactive presentation viewport (70% space) */
+.right-study-viewport {
+  flex: 70;
+  background: #ffffff;
+  border: 1px solid #e2e9e6;
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(45, 58, 52, 0.02);
+}
+
+/* Studio Form Management Cards */
+.studio-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e9e6 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 15px rgba(45, 58, 52, 0.02) !important;
+}
+
+.studio-header {
+  background: #e7f0ed !important;
+  border-bottom: 1px solid #d8e3df !important;
+}
+
+/* Crisp Input Elements */
+.custom-input {
+  background: #fafcfb !important;
+  border: 1px solid #d1ded9 !important;
+  color: #2d3a34 !important;
+  border-radius: 8px !important;
+}
+.custom-input:focus {
+  border-color: #7ca190 !important;
+  box-shadow: 0 0 0 3px rgba(124, 161, 144, 0.15) !important;
+}
+
+/* Left Stack Index List Items (from reference image) */
+.card-stack-item {
+  background: #ffffff;
+  border: 1px solid #e2e9e6;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.card-stack-item.active {
+  border-color: #7ca190;
+  background: #f0f6f4;
+}
+
+/* THE GIANT INTERACTIVE PRESENTATION CARD (Centered look) */
+.presentation-flashcard-wrapper {
+  width: 100%;
+  max-width: 680px;
+  height: 320px; /* Large cinematic size */
+  perspective: 1500px;
+  cursor: pointer;
+  margin: auto 0;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform-style: preserve-3d;
+}
+
+.presentation-flashcard-wrapper.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.card-front {
+  background: #ffffff;
+  color: #2d3a34;
+  border: 1px solid #cbdcd5;
+}
+
+.card-back {
+  background: #f0f5f3;
+  color: #324a3e;
+  border: 1px solid #cbdcd5;
+  transform: rotateY(180deg);
+}
+
+/* Reference Navigation Buttons & Accents */
+.btn-sage-primary {
+  background: #7ca190 !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+.btn-sage-primary:hover {
+  background: #6a8f7e !important;
+}
+
+.btn-nav-outline {
+  background: #ffffff !important;
+  color: #556b60 !important;
+  border: 1px solid #d1ded9 !important;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.btn-nav-outline:hover {
+  background: #f4f7f6 !important;
+  color: #2d3a34 !important;
+}
+
+/* Reference Progress Tracker Line bar styling */
+.progress-container-bar {
+  width: 100%;
+  max-width: 680px;
+  height: 4px;
+  background: #e2e9e6;
+  border-radius: 2px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.progress-filler {
+  height: 100%;
+  background: #7ca190;
+  transition: width 0.3s ease;
+}
+
+/* Custom Navigation Tabs formatting */
+.nav-tabs .nav-link {
+  color: #556b60 !important;
+  opacity: 0.75;
+  border: none !important;
+  border-radius: 6px !important;
+  margin-right: 5px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.nav-tabs .nav-link.active {
+  background: #ffffff !important;
+  color: #3b5246 !important;
+  font-weight: 600;
+}
+
+.small-indicator {
+  background: #e7f0ed;
+  color: #435c50;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
